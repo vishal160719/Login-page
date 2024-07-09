@@ -16,21 +16,23 @@
         }
         .container {
             background-color: #fff;
-            padding: 50px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 450px;
+            width: 90%;
+            max-width: 450px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
         }
         .container h2 {
             margin-bottom: 10px;
-            font-size: 32px;
+            font-size: 24px;
             color: #333;
             text-align: left;
         }
         .container p {
             margin-bottom: 16px;
             color: #777;
-            font-size: 18px;
+            font-size: 16px;
             text-align: left;
             position: relative; /* Required for positioning the pseudo-element */
         }
@@ -49,12 +51,12 @@
         .container input[type="email"],
         .container input[type="password"] {
             width: 100%;
-            padding: 15px;
+            padding: 10px;
             margin: 15px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
-            font-size: 18px;
+            font-size: 16px;
             transition: border-color 0.3s; /* Smooth transition for border color */
         }
         .container input[type="email"]:hover,
@@ -62,17 +64,18 @@
             border-color: #007BFF; /* Light blue border on hover */
         }
         .container button {
-            width: 250px; /* Adjust width as needed */
-            padding: 20px; /* Adjust padding as needed */
+            width: 50%; /* Reduced button width */
+            padding: 15px; /* Adjust padding as needed */
             background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 18px; /* Adjust font size as needed */
+            font-size: 16px; /* Adjust font size as needed */
             transition: background-color 0.3s;
             display: block; /* Ensures button is block-level */
-            margin: 20px auto 0;
+            margin: 20px auto 0; /* Center the button */
+            box-sizing: border-box;
         }
         
         .container button:hover {
@@ -82,11 +85,13 @@
             display: flex;
             justify-content: space-between; /* Ensures equal spacing between elements */
             align-items: center; /* Centers vertically */
-            margin-top: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
         }
         .container .social-login .icon-container {
-            width: 120px; /* Adjust width as needed */
-            height: 60px; /* Adjust height as needed */
+            flex: 1 1 calc(33.333% - 10px); /* Flexbox layout for responsive width */
+            max-width: 120px; /* Maximum width */
+            height: 50px; /* Adjust height as needed */
             background-color: #f0f0f0;
             border-radius: 5px; /* Rounded corners */
             display: flex;
@@ -94,20 +99,53 @@
             align-items: center;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin: 5px; /* Adjust margin for spacing */
         }
         
         .container .social-login img {
             width: 28px;
             height: 25px;
         }
-        .container .social-login .google {
-             /* Pushes Google container to the left */
+
+        /* Media queries for different screen sizes */
+        @media (max-width: 768px) {
+            .container h2 {
+                font-size: 20px;
+            }
+            .container p {
+                font-size: 14px;
+            }
+            .container input[type="email"],
+            .container input[type="password"] {
+                font-size: 14px;
+            }
+            .container button {
+                font-size: 14px;
+                padding: 12px;
+                width: 70%; /* Adjust button width for medium screens */
+            }
         }
-        .container .social-login .facebook {
-             /* Pushes Google container to the left */
-        }
-        .container .social-login .apple {
-             /* Pushes Apple container to the right */
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            .container h2 {
+                font-size: 18px;
+            }
+            .container p {
+                font-size: 12px;
+            }
+            .container input[type="email"],
+            .container input[type="password"] {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .container button {
+                font-size: 12px;
+                padding: 10px;
+                width: 80%; /* Adjust button width for small screens */
+            }
         }
     </style>
 </head>
@@ -125,7 +163,7 @@
                 <img src="https://banner2.cleanpng.com/20180423/gkw/kisspng-google-logo-logo-logo-5ade7dc753b015.9317679115245306313428.jpg" alt="Google">
             </div>
             <div class="icon-container facebook">
-                <img src="../assets/image-removebg-preview (23).png" alt="Facebook">
+                <img src="./image-removebg-preview (23).png" alt="Facebook">
             </div>
             <div class="icon-container apple">
                 <img src="https://i.pinimg.com/736x/3a/80/d0/3a80d08597eb583fc0784a694b56169a.jpg" alt="Apple">
